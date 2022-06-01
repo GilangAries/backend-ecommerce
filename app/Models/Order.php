@@ -9,4 +9,14 @@ class Order extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
