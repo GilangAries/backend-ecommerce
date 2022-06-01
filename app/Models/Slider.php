@@ -10,5 +10,10 @@ class Slider extends Model
     use HasFactory;
     // protected $guarded = ['id'];
 
-    protected $fillable = ["image","link"];
+    protected $fillable = ["image", "link"];
+
+    public function getImageAttribute($image)
+    {
+        return asset('storage/sliders/' . $image);
+    }
 }

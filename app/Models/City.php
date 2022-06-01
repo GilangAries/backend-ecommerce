@@ -9,4 +9,9 @@ class City extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
 }
